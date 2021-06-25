@@ -21,7 +21,6 @@ const ProfilePicComponent = ({ profilePic }) => {
       }
     );
   };
-  console.log();
   return (
     <div>
       <img src={profilePic} alt="Profile" />
