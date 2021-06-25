@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import NavProfilePic from "../ui/NavProfilePic";
 import classes from "./Header.module.css";
-
+import LogoutButton from "../LogoutButton";
 const Header = ({ user }) => {
   if (user) {
     return (
@@ -19,6 +19,7 @@ const Header = ({ user }) => {
             </li>
           </ul>
         </nav>
+        <LogoutButton className={classes.logout} />
       </header>
     );
   } else {

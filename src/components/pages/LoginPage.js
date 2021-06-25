@@ -2,12 +2,10 @@ import axios from "axios";
 import { useRef } from "react";
 import cookieCutter from "cookie-cutter";
 import classes from "./LoginPage.module.css";
-import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 function LoginPage() {
   const nameInputRef = useRef();
   const passwordInputRef = useRef();
-  const history = useHistory();
   async function loginSubmitHandler(event) {
     event.preventDefault();
     const nameValue = nameInputRef.current.value;
@@ -26,7 +24,7 @@ function LoginPage() {
     cookieCutter.set("token", data, {
       path: "/",
     });
-    history.push("/");
+    window.location.reload();
   }
   function onFailure(err) {
     console.log(err.response.data.message); //we have tghe

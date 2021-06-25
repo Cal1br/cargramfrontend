@@ -8,14 +8,16 @@ import LoginPage from "./components/pages/LoginPage";
 import RegisterCheck from "./components/layouts/RegisterCheck";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-
+import cookieCutter from "cookie-cutter";
 function App() {
   const [user, setUser] = useState(null);
   useEffect(() => {
-    axios.get("/user/currentuser").then(({ data }) => {
-      setUser(data);
-      console.log(data);
-    });
+    if (cookieCutter.get("token")) {
+      axios.get("/user/currentuser").then(({ data }) => {
+        setUser(data);
+        console.log(data);
+      });
+    }
   }, []);
   return (
     <Layout user={user}>

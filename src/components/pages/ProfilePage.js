@@ -1,5 +1,6 @@
 import classes from "./ProfilePage.module.css";
 import ProfilePicComponent from "../ProfilePicComponent";
+import Biography from "../Biography";
 const ProfilePage = ({ user }) => {
   return (
     <>
@@ -11,6 +12,7 @@ const ProfilePage = ({ user }) => {
 
           <div className={classes.profileInfo}>
             <p>Username: {user.username}</p>
+            <Biography user={user}></Biography>
           </div>
         </div>
       ) : null}
