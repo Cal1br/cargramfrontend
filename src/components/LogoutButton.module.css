@@ -1,0 +1,7 @@
+.logout a {
+  position: absolute;
+  font-size: 1rem;
+  left: 95%;
+  top: 4%;
+  color: crimson;
+}

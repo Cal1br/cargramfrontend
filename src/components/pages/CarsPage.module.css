@@ -1,0 +1,36 @@
+.carsPage ul {
+  list-style-type: none;
+}
+.form {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.form input {
+  width: 100%;
+  background-color: rgba(0, 0, 84, 0);
+  color: white;
+  border-color: #000;
+}
+.form button {
+  margin-top: 30px;
+  height: 30px;
+  border-radius: 10px;
+  width: 103%;
+  background-color: rgba(0, 0, 84, 0);
+  color: white;
+  border-color: #000;
+}
+.form textarea {
+  text-align: center;
+  width: 100%;
+  resize: none;
+  background-color: #101010;
+  color: white;
+  border-color: #651540;
+}
+.form li {
+  display: inline-flex;
+}

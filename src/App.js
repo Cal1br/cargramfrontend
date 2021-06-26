@@ -3,8 +3,7 @@ import Layout from "./components/layouts/Layout";
 import HomePage from "./components/pages/HomePage";
 import ProfilePage from "./components/pages/ProfilePage";
 import CarsPage from "./components/pages/CarsPage";
-import RegisterPage from "./components/pages/RegisterPage";
-import LoginPage from "./components/pages/LoginPage";
+import ViewProfile from "./components/pages/ViewProfile";
 import RegisterCheck from "./components/layouts/RegisterCheck";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
@@ -15,7 +14,6 @@ function App() {
     if (cookieCutter.get("token")) {
       axios.get("/user/currentuser").then(({ data }) => {
         setUser(data);
-        console.log(data);
       });
     }
   }, []);
@@ -31,6 +29,9 @@ function App() {
           </Route>
           <Route path="/cars">
             <CarsPage user={user} />
+          </Route>
+          <Route path={"/viewprofile/:username"}>
+            <ViewProfile />
           </Route>
         </Switch>
       </RegisterCheck>

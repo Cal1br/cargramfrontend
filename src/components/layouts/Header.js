@@ -19,14 +19,14 @@ const Header = ({ user }) => {
             </li>
           </ul>
         </nav>
-        <LogoutButton className={classes.logout} />
+        <LogoutButton />
       </header>
     );
   } else {
     return (
-      <header className={classes.headerNotLoggedIn}>
+      <header className={classes.header}>
         <nav>
-          <Link to="/">Home</Link>
+          <p>Welcome to CarShow</p>
         </nav>
       </header>
     );

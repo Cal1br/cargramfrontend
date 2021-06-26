@@ -30,10 +30,10 @@ function LoginPage() {
     console.log(err.response.data.message); //we have tghe
   }
   return (
-    <div>
-      <h2 className={classes.h}>Login</h2>
+    <div className={classes.login}>
+      <h2>Login</h2>
       <form className={classes.form} onSubmit={loginSubmitHandler}>
-        <div className={classes.control}>
+        <div>
           <label htmlFor="username">Username</label>
           <input type="text" required id="username" ref={nameInputRef}></input>
         </div>

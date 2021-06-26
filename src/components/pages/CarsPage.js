@@ -1,44 +1,34 @@
 import React, { useState, useEffect } from "react";
-import cookieCutter from "cookie-cutter";
-import isRegistered from "../../utils/isRegistered";
 import axios from "axios";
 import CarInputForm from "../CarInputForm";
 import classes from "./CarsPage.module.css";
+import Car from "../Car";
 const CarsPage = ({ user }) => {
   const [cars, setCars] = useState([]);
-
+  const [addCar, setAddCar] = useState(false);
+  function clickAddCar() {
+    if (addCar) {
+      setAddCar(false);
+    } else {
+      setAddCar(true);
+    }
+  }
   useEffect(() => {
-    console.log("asd");
     axios.get("/cars/getmycars").then((response) => {
       setCars(response.data);
       console.log(response.data);
     });
   }, []);
   return (
-    <div>
-      <CarInputForm user={user} />
+    <div className={classes.carsPage}>
+      <div className={classes.form}>
+        <btn onClick={clickAddCar}>{addCar ? "Close" : "Add car"}</btn>
+        {addCar && <CarInputForm user={user} />}
+      </div>
       <ul>
         {cars.map((car) => (
           <li key={car.carId}>
-            <div>
-              <img src={car.photo} alt="Car" />
-            </div>
-            <p>
-              Name: {car.name}
-              <br />
-              Model: {car.model}
-              <br />
-              Horsepower: {car.horsepower}
-              <br />
-              Engine Displacement: {car.engineDisplacement} L
-              <br />
-              Date of Manufactur: {car.manufactureDate}
-            </p>
-            <textarea
-              className={classes.description}
-              readOnly
-              value={car.description}
-            ></textarea>
+            <Car car={car} user={user} />
           </li>
         ))}
       </ul>

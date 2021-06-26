@@ -1,0 +1,15 @@
+.homePage ul {
+  list-style: none;
+}
+.searchDiv {
+  padding: 3px;
+  margin: 5px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.searchDiv input {
+  background-color: #101010;
+  color: white;
+  border-color: #651540;
+}

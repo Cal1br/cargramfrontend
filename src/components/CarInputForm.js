@@ -17,7 +17,6 @@ const CarInputForm = ({ user }) => {
   };
   const handlePhotoUpload = ({ carId }) => {
     const url = "/cars/uploadphoto/" + carId;
-    console.log(carId);
     const formData = new FormData();
     formData.append("File", selectedFile);
     axios.post(url, formData).then(
@@ -45,7 +44,7 @@ const CarInputForm = ({ user }) => {
   }
   return (
     <div className={classes.pictureFrame}>
-      <h2 className={classes.h}>Add car</h2>
+      <h2>Add car</h2>
       <input type="file" name="file" onChange={changeHandler} />
       {isFilePicked && (
         <div>
@@ -56,15 +55,15 @@ const CarInputForm = ({ user }) => {
 
       <div className={classes.formdata}>
         <form className={classes.form} onSubmit={postCarHandler}>
-          <div className={classes.control}>
+          <div>
             <label htmlFor="name">Name</label>
             <input type="text" required id="name" ref={nameInputRef}></input>
           </div>
-          <div className={classes.control}>
+          <div>
             <label htmlFor="model">Model</label>
             <input required id="model" type="text" ref={modelInputRef}></input>
           </div>
-          <div className={classes.control}>
+          <div>
             <label htmlFor="horsepower">Horsepower</label>
             <input
               required
@@ -75,7 +74,7 @@ const CarInputForm = ({ user }) => {
               ref={horsepowerInputRef}
             ></input>
           </div>
-          <div className={classes.control}>
+          <div>
             <label htmlFor="displacement">Engine displacement</label>
             <input
               required
@@ -88,16 +87,16 @@ const CarInputForm = ({ user }) => {
             ></input>
             L
           </div>
-          <div className={classes.control}>
+          <div>
             <label htmlFor="date">Date of manifacture</label>
             <input required id="date" type="date" ref={dateInputRef}></input>
           </div>
 
-          <div className={classes.control}>
+          <div>
             <label htmlFor="description">Description</label>
             <textarea
               className={classes.textarea}
-              maxLength="500"
+              maxLength="1500"
               required
               id="description"
               ref={descriptionInputRef}

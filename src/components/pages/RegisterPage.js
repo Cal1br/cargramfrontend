@@ -31,7 +31,7 @@ function RegisterPage() {
     );
   }
   return (
-    <div>
+    <div className={classes.register}>
       <h2 className={classes.h}>Register</h2>
       <form className={classes.form} onSubmit={registerSubmitHandler}>
         <div className={classes.control}>

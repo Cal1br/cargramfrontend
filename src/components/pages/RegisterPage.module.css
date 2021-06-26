@@ -1,0 +1,38 @@
+.register {
+  margin-top: 15%;
+  margin-left: 25%;
+  margin-right: 25%;
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.register h2 {
+  font-size: 4rem;
+}
+.register input {
+  width: 100%;
+  background-color: rgba(0, 0, 84, 0);
+  color: white;
+  border-color: #000;
+}
+.register button {
+  margin-top: 30px;
+  height: 30px;
+  border-radius: 10px;
+  width: 103%;
+  background-color: rgba(0, 0, 84, 0);
+  color: white;
+  border-color: #000;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.register a {
+  margin-top: 20px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #fcb8d2;
+}

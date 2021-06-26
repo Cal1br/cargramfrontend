@@ -1,0 +1,52 @@
+.car {
+  display: flex;
+  justify-content: center;
+}
+
+.car img {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.car textarea {
+  text-align: center;
+  width: 100%;
+  resize: none;
+  background-color: #101010;
+  color: white;
+  border-color: rgba(255, 255, 255, 0);
+}
+.car p {
+  text-align: center;
+}
+.car button {
+  background-color: rgba(0, 0, 84, 0);
+  color: white;
+  border-color: #000;
+}
+.block {
+  width: 50%;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  border: #651540 1px solid;
+  list-style: none;
+}
+.buttonDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.buttonDiv button {
+  width: 100%;
+}
+.buttonDiv input {
+  width: 100%;
+  background-color: rgba(0, 0, 84, 0);
+  color: white;
+  border-color: #000;
+}

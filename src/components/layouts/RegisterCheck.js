@@ -12,10 +12,8 @@ function RegisterCheck(props) {
     }
   }
   if (isRegistered()) {
-    console.log("registered!");
     return props.children;
   } else {
-    console.log("NOT registered!");
     return (
       <Switch>
         <Route path="/register">
