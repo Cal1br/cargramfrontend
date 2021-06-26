@@ -1,0 +1,11 @@
+.profilePic {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.profilePic btn {
+  background-color: rgba(0, 0, 84, 0);
+  color: white;
+  border-color: #000;
+}

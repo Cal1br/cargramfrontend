@@ -13,7 +13,7 @@ const CarModAddForm = ({ car }) => {
     setIsFilePicked(true);
   };
   const handlePhotoUpload = ({ modId }) => {
-    const url = "/cars/addmod/" + modId;
+    const url = "/cars/uploadmodphoto/" + modId;
     const formData = new FormData();
     formData.append("File", selectedFile);
     axios.post(url, formData).then(
@@ -52,7 +52,7 @@ const CarModAddForm = ({ car }) => {
         <form className={classes.form} onSubmit={postModHandler}>
           <div className={classes.control}>
             <label htmlFor="price">Price</label>
-            <input type="text" id="price" ref={priceInputRef}></input>
+            <input type="number" id="price" ref={priceInputRef}></input>
           </div>
           <div className={classes.control}>
             <label htmlFor="date">Date</label>

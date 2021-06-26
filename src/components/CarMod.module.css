@@ -1,0 +1,15 @@
+.modDiv btn {
+  background-color: rgba(0, 0, 84, 0);
+  color: white;
+  border-color: #000;
+  width: 100%;
+}
+.modDiv {
+  text-align: center;
+}
+.delButtonDiv {
+  border: #651540 1px solid;
+  margin-bottom: 50px;
+  margin-top: 20px;
+  border-radius: 10px;
+}

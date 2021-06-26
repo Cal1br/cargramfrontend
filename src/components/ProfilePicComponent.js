@@ -5,6 +5,15 @@ import React, { useState } from "react";
 const ProfilePicComponent = ({ profilePic }) => {
   const [selectedFile, setSelectedFile] = useState();
   const [isFilePicked, setIsFilePicked] = useState(false);
+
+  const [upload, setUpload] = useState(false);
+  function handleUploadClick() {
+    if (upload) {
+      setUpload(false);
+    } else {
+      setUpload(true);
+    }
+  }
   const changeHandler = (event) => {
     setSelectedFile(event.target.files[0]);
     setIsFilePicked(true);
@@ -22,12 +31,19 @@ const ProfilePicComponent = ({ profilePic }) => {
     );
   };
   return (
-    <div>
+    <div className={classes.profilePic}>
       <img src={profilePic} alt="Profile" />
-      <input type="file" name="file" onChange={changeHandler} />
-      <div>
-        <button onClick={handleSubmission}>Submit</button>
-      </div>
+      <button onClick={handleUploadClick}>
+        {upload ? "Close" : "Change Profile picture?"}
+      </button>
+      {upload && (
+        <div>
+          <input type="file" name="file" onChange={changeHandler} />
+          <div>
+            <button onClick={handleSubmission}>Submit</button>
+          </div>
+        </div>
+      )}
       {isFilePicked && (
         <div>
           <p>Filename: {selectedFile.name}</p>

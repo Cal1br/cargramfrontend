@@ -4,9 +4,15 @@ import React, { useState, useEffect } from "react";
 import classes from "./CarMod.module.css";
 import Mod from "./Mod";
 import CarModAddForm from "./CarModAddForm";
-const CarMod = ({ car, user }) => {
-  const [mods, setMods] = useState([]);
+import { useHistory } from "react-router-dom";
 
+const CarMod = ({ car, user }) => {
+  const history = useHistory();
+  const [mods, setMods] = useState([]);
+  function handleDelete() {
+    axios.delete("/cars/" + car.carId);
+    history.reload();
+  }
   useEffect(() => {
     axios.get("/cars/getmods/" + car.carId).then((response) => {
       setMods(response.data);
@@ -21,7 +27,16 @@ const CarMod = ({ car, user }) => {
   }
   return (
     <div className={classes.modDiv}>
-      {checkOwnership() && <CarModAddForm car={car} />}
+      {checkOwnership() && (
+        <div>
+          <div className={classes.delButtonDiv}>
+            <btn onClick={handleDelete}>Delete Car?</btn>
+          </div>
+
+          <CarModAddForm car={car} />
+        </div>
+      )}
+
       <ul>
         {mods.map((mod) => (
           <li key={mod.modId}>

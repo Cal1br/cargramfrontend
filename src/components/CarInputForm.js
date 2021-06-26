@@ -57,11 +57,23 @@ const CarInputForm = ({ user }) => {
         <form className={classes.form} onSubmit={postCarHandler}>
           <div>
             <label htmlFor="name">Name</label>
-            <input type="text" required id="name" ref={nameInputRef}></input>
+            <input
+              type="text"
+              required
+              id="name"
+              ref={nameInputRef}
+              maxLength="15"
+            ></input>
           </div>
           <div>
             <label htmlFor="model">Model</label>
-            <input required id="model" type="text" ref={modelInputRef}></input>
+            <input
+              required
+              id="model"
+              type="text"
+              ref={modelInputRef}
+              maxLength="25"
+            ></input>
           </div>
           <div>
             <label htmlFor="horsepower">Horsepower</label>

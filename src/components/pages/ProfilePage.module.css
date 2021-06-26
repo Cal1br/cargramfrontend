@@ -1,0 +1,31 @@
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.profilePictureFrame img {
+  width: 600px;
+  height: auto;
+  margin: 25px;
+  border-radius: 10px;
+}
+.profileInfo textarea {
+  text-align: center;
+  width: 100%;
+  resize: none;
+  background-color: #101010;
+  color: white;
+  border-color: #651540;
+}
+.profilePictureFrame {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.profileInfo btn {
+  background-color: rgba(0, 0, 84, 0);
+  color: white;
+  border-color: #000;
+}

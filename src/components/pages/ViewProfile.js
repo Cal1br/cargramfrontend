@@ -25,7 +25,7 @@ const ViewProfile = () => {
               <img src={user.profilePic} alt={"Profile"}></img>
             </div>
             <p>Username: {user.username}</p>
-            <p>Is Online?: {user.isOnline}</p>
+            <p>Is Online?: {user.isOnline ? "Online" : "Offline"}</p>
             <p>Last Online: {user.lastOnline}</p>
             <p>Account creation: {user.accountCreation}</p>
             <textarea
