@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Cargram Front End
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App]
 
 Това е single page app front-end-a на cargram проекта.
 Построено чрез React и още библеотеки като axios, react-router.
