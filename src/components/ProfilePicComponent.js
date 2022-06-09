@@ -1,6 +1,7 @@
 import axios from "axios";
 import classes from "./ProfilePicComponent.module.css";
 import React, { useState } from "react";
+import imageService from "../services/PhotoService";
 
 const ProfilePicComponent = ({ profilePic }) => {
   const [selectedFile, setSelectedFile] = useState();
@@ -32,7 +33,7 @@ const ProfilePicComponent = ({ profilePic }) => {
   };
   return (
     <div className={classes.profilePic}>
-      <img src={profilePic} alt="Profile" />
+      <img src={imageService.getImage(profilePic)} alt="Profile" />
       <button onClick={handleUploadClick}>
         {upload ? "Close" : "Change Profile picture?"}
       </button>

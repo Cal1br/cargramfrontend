@@ -1,0 +1,4 @@
+{
+  "serviceUrl": "http://localhost:8080/",
+  "photoService": "api/v1/image/"
+}

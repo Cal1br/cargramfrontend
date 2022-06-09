@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import classes from "./ViewProfile.module.css";
 import Car from "../Car";
+import imageService from "../../services/PhotoService";
 const ViewProfile = () => {
   let { username: username } = useParams();
   const [user, setUser] = useState([]);
@@ -12,7 +13,6 @@ const ViewProfile = () => {
       setUser(response.data);
     });
     axios.get("/cars/getforuser/" + username).then((response) => {
-      console.log(response.data);
       setCars(response.data);
     });
   }, []);
@@ -22,7 +22,7 @@ const ViewProfile = () => {
         <div>
           <div className={classes.profileInfo}>
             <div className={classes.profilePictureFrame}>
-              <img src={user.profilePic} alt={"Profile"}></img>
+              <img src={imageService.getImage(user.profilePic)} alt={"Profile"}></img>
             </div>
             <p>Username: {user.username}</p>
             <p>Is Online?: {user.isOnline ? "Online" : "Offline"}</p>

@@ -17,7 +17,6 @@ const ProfilePage = ({ user }) => {
               <ProfilePicComponent profilePic={user.profilePic} />
             </div>
             <p>
-              {console.log(user)}
               Username: {user.username}
               <br />
               Is Online?: {user.isOnline ? "Online" : "Offline"}
