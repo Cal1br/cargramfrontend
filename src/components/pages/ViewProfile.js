@@ -12,7 +12,6 @@ const ViewProfile = () => {
       setUser(response.data);
     });
     axios.get("/cars/getforuser/" + username).then((response) => {
-      console.log(response.data);
       setCars(response.data);
     });
   }, []);

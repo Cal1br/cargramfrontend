@@ -27,7 +27,8 @@ function LoginPage() {
     window.location.reload();
   }
   function onFailure(err) {
-    console.log(err.response.data.message); //we have tghe
+    //TODO error toast
+    console.log(err.response.data.message);
   }
   return (
     <div className={classes.login}>

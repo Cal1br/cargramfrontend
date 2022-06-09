@@ -1,6 +1,7 @@
 import classes from "./Car.module.css";
 import React, { useState } from "react";
 import CarMod from "./CarMod";
+import imageService from "../services/PhotoService"
 function Car({ car, user }) {
   const [displayMod, setDisplayMod] = useState(false);
   function handleClick() {
@@ -13,7 +14,7 @@ function Car({ car, user }) {
   return (
     <div className={classes.car}>
       <div className={classes.block}>
-        <img src={car.photo} alt="Car" />
+        <img src={imageService.getImage(car.photo)} alt="Car" />
         <section>
           <p>
             Name: {car.name}

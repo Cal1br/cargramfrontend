@@ -8,7 +8,6 @@ const Biography = ({ user }) => {
     if (isReadOnly) {
       setIsReadOnly(false);
     } else {
-      console.log(textInputRef.current.value);
       setIsReadOnly(true);
       axios.post("/user/uploadbiography", textInputRef.current.value).then(
         (obj) => {
