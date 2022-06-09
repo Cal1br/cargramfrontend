@@ -1,8 +1,9 @@
 import classes from "./Mod.module.css";
+import imageService from "../services/PhotoService";
 const Mod = ({ mod }) => {
   return (
     <div>
-      <img src={mod.modPicture} alt="Car" />
+      <img src={imageService.getImage(mod.modPicture)} alt="Mod" />
       <p>
         Price: {mod.Price}
         <br />
